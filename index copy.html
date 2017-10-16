@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <title>3W Education above all</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/dc.css" />
+    <link rel="stylesheet" type="text/css" href="css/site.css" />
+    <link rel="stylesheet" type="text/css" href="css/leaflet.css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/crossfilter.v1.min.js"></script>
+    <script src="js/dc.js"></script>
+    <script src="js/leaflet.js"></script>
+    <script src="js/dc.leaflet.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 id="title">Education above all - 3W</h2>
+            </div>
+        </div>
+        <div id="header" class="row">
+            <div class="col-md-11" id="description">
+                <p>Quos sed eius ea autem blanditiis voluptatum reprehenderit vel. Dolor non omnis maiores tenetur aspernatur totam harum accusantium.Quos sed eius ea autem blanditiis voluptatum reprehenderit vel. Dolor non omnis maiores tenetur aspernatur totam harum accusantium.Quos sed eius ea autem blanditiis voluptatum reprehenderit vel. Dolor non omnis maiores tenetur aspernatur totam harum accusantium.Quos sed eius ea autem blanditiis voluptatum reprehenderit vel. Dolor non omnis maiores tenetur aspernatur totam harum accusantium.</p>
+            </div>
+            <div class="col-md-1">
+                <a class="reset btn btn-primary btn-sm" id="reset" href="javascript:dc.filterAll();dc.redrawAll();">Reset All</a>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <p> Project</p>
+                <div id="project"></div>
+            </div>
+            <div class="col-md-4" id="oosc">
+                <p> Total Out Of School Children</p>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 colheight">
+                <div class="col-xs-6 removepadding">
+                    <p>Organisation</p>
+                    <div id="hdx-3W-who" class="hdx-3w-chart"></div>
+                </div>
+                <div class="col-xs-6 removepadding">
+                    <p>Interventions</p>
+                    <div id="hdx-3W-what" class="hdx-3w-chart"></div>
+                </div>
+            </div>
+            <div class="col-md-4  colheight">
+                <div class="col-xs-12 removepadding">
+                    <p id="wheretitle">Country</p>
+                    <div id="hdx-3W-where" class="hdx-3w-chart"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/site.js"></script>
+</body>
+
+</html>

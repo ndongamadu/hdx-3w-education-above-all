@@ -1,0 +1,83 @@
+.hdx-3w-chart.dc-chart g.row text {
+    fill: black;
+    font-size: 0.8em;
+}
+
+.project.dc-chart g.row text {
+    fill: black;
+    font-size: em;
+}
+
+
+/*
+.hdx-3W-where .dc-chart svg g g.axis domain {
+    display: none;
+}
+*/
+
+.hdx-3w-chart.dc-chart .axis {
+    display: none;
+}
+
+.project.dc-chart .axis {
+    display: none;
+}
+
+#hdx-3W-where {
+    height: 360px;
+    width: 100%;
+}
+
+#wheretitle {
+    padding-bottom: 10px;
+}
+
+#header {
+    border-bottom-color: #dddddd;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+.colheight {
+    height: 450px;
+}
+
+.removepadding {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.hdx-3w-chart {
+    width: 100%;
+}
+
+#project {
+    width: 400px;
+}
+
+.hdx-3w-info {
+    padding: 5px;
+    background-color: white;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+#description {
+    text-align: justify;
+    padding-top: 10px;
+}
+
+#keyFigures p {
+    font-size: 46px;
+}
+
+#reset {
+    float: right;
+}
+
+#logo {
+    width: 350px;
+    height: 90px;
+    padding-top: 10px;
+}
