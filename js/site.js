@@ -12,7 +12,6 @@ var config = {
     nameAttribute: "name",
     color: "#03a9f4",
     projectField: "Project_name",
-    oosc: 12331
 };
 
 //function to generate the 3W component
@@ -21,7 +20,6 @@ var config = {
 
 function generate3WComponent(config, data, geom) {
 
-    $('#test').html(String(config.oosc));
 
     var lookup = genLookup(geom, config);
 
@@ -32,6 +30,7 @@ function generate3WComponent(config, data, geom) {
 
     var ooscNumber = dc.numberDisplay('#oosc');
     var countriesNumber = dc.numberDisplay('#numCountries')
+    var projectNumber = dc.numberDisplay('#numProject')
 
 
     var cf = crossfilter(data);
@@ -94,7 +93,13 @@ function generate3WComponent(config, data, geom) {
                 p.country[v["Country"]] = 1;
                 p.numCountries++;
             }
-            config.oosc = p.oosc;
+
+            if (v["Project"] in p.Project)
+                p.Project[v["Project"]]++;
+            else {
+                p.Project[v["Project"]] = 1;
+                p.numProject++;
+            }
 
             return p;
 
@@ -111,8 +116,15 @@ function generate3WComponent(config, data, geom) {
                 p.numCountries--;
             }
 
+            p.Project[v["Project"]]--;
+            if (p.Project[v["Project"]] == 0) {
+                delete p.Project[v["Project"]];
+                p.numProject--;
+            }
+
             if (p.oosc < 0) p.oosc = 0;
             if (p.numCountries < 0) p.numCountries = 0;
+            if (p.numProject < 0) p.numProject = 0;
 
             return p;
         },
@@ -121,6 +133,8 @@ function generate3WComponent(config, data, geom) {
             return {
                 oosc: 0,
                 numCountries: 0,
+                numProject: 0,
+                Project: {},
                 country: {}
             };
         }
@@ -185,6 +199,10 @@ function generate3WComponent(config, data, geom) {
         return parseFloat(d.numCountries);
     };
 
+    var getProject = function (d) {
+        return parseFloat(d.numProject);
+    };
+
     var formatComma = d3.format(',');
 
     ooscNumber.group(gp)
@@ -195,6 +213,10 @@ function generate3WComponent(config, data, geom) {
     countriesNumber.group(gp)
         .formatNumber(d3.format(",.0f"))
         .valueAccessor(getCountries);
+
+    projectNumber.group(gp)
+        .formatNumber(d3.format(",.0f"))
+        .valueAccessor(getProject);
 
     dc.dataCount('#count-info')
         .dimension(cf)
