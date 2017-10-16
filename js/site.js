@@ -83,7 +83,10 @@ function generate3WComponent(config, data, geom) {
 
     var gp = cf.groupAll().reduce(
         function (p, v) {
-            p.oosc += +v[config.sumField];
+            //p.oosc += +v[config.sumField];
+            if (p[config.projectField] != v[config.projectField]) {
+                p.oosc += +v[config.sumField];
+            }
 
             if (v["Country"] in p.country)
                 p.country[v["Country"]]++;
@@ -97,7 +100,10 @@ function generate3WComponent(config, data, geom) {
 
         },
         function (p, v) {
-            p.oosc -= +v[config.sumField];
+            if (p[config.projectField] != v[config.projectField]) {
+                p.oosc -= +v[config.sumField];
+
+            }
 
             p.country[v["Country"]]--;
             if (p.country[v["Country"]] == 0) {
