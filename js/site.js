@@ -176,14 +176,11 @@ function generate3WComponent(config, data, geom) {
     var formatComma = d3.format(',');
 
     ooscNumber.group(gp)
-        .formatNumber(d3.format(".3s"))
+        .formatNumber(d3.format(""))
         .valueAccessor(getTotalOosc);
-    //.formatNumber();
 
     countriesNumber.group(gp)
-
-        .formatNumber(d3.format(".3s"))
-
+        .formatNumber(d3.format(""))
         .valueAccessor(getCountries);
 
     dc.dataCount('#count-info')
