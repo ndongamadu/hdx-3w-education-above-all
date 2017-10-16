@@ -19,6 +19,10 @@
     display: none;
 }
 
+.hdx-3w-chart.dc-chart svg {
+    padding-left: 0px;
+}
+
 .project.dc-chart .axis {
     display: none;
 }
@@ -36,6 +40,7 @@
     border-bottom-color: #dddddd;
     border-bottom-style: solid;
     border-bottom-width: 1px;
+    margin-bottom: 15px;
 }
 
 .colheight {
@@ -69,7 +74,8 @@
 }
 
 #keyFigures p {
-    font-size: 46px;
+    font-size: 26px;
+    color: #03a9f4;
 }
 
 #reset {
@@ -78,6 +84,5 @@
 
 #logo {
     width: 350px;
-    height: 90px;
-    padding-top: 10px;
+    margin-top: 30px;
 }

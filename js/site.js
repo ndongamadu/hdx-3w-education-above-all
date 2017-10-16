@@ -166,7 +166,7 @@ function generate3WComponent(config, data, geom) {
         .xAxis().ticks(5);
 
     var getTotalOosc = function (d) {
-        return parseFloat(d.oosc);
+        return d.oosc;
     };
 
     var getCountries = function (d) {
@@ -176,12 +176,14 @@ function generate3WComponent(config, data, geom) {
     var formatComma = d3.format(',');
 
     ooscNumber.group(gp)
-        .formatNumber(d3.format(','))
+        .formatNumber(d3.format(".3s"))
         .valueAccessor(getTotalOosc);
     //.formatNumber();
 
     countriesNumber.group(gp)
-        .formatNumber(d3.format(","))
+
+        .formatNumber(d3.format(".3s"))
+
         .valueAccessor(getCountries);
 
     dc.dataCount('#count-info')
