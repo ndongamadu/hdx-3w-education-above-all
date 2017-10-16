@@ -11,7 +11,8 @@ var config = {
     joinAttribute: "id",
     nameAttribute: "name",
     color: "#03a9f4",
-    projectField: "Project_name"
+    projectField: "Project_name",
+    oosc: 12331
 };
 
 //function to generate the 3W component
@@ -19,6 +20,8 @@ var config = {
 //geom is geojson file
 
 function generate3WComponent(config, data, geom) {
+
+    $('#test').html(String(config.oosc));
 
     var lookup = genLookup(geom, config);
 
@@ -88,6 +91,8 @@ function generate3WComponent(config, data, geom) {
                 p.country[v["Country"]] = 1;
                 p.numCountries++;
             }
+            config.oosc = p.oosc;
+
             return p;
 
         },
@@ -139,7 +144,7 @@ function generate3WComponent(config, data, geom) {
         .data(function (group) {
             return group.top(10);
         })
-        .labelOffsetY(13)
+        .labelOffsetY(15)
         .colors([config.color])
         .colorAccessor(function (d, i) {
             return 0;
@@ -166,6 +171,7 @@ function generate3WComponent(config, data, geom) {
         .xAxis().ticks(5);
 
     var getTotalOosc = function (d) {
+        //config.oosc = d.oosc;
         return d.oosc;
     };
 

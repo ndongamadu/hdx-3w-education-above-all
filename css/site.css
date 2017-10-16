@@ -31,6 +31,10 @@
     width: 100%;
 }
 
+#hdx-3W-who {
+    height: 450px;
+}
+
 #wheretitle {
     padding-bottom: 10px;
 }
@@ -78,7 +82,7 @@ h5 {
 }
 
 #keyFigures p {
-    font-size: 2em;
+    font-size: 2.4em;
     color: #03a9f4;
 }
 
